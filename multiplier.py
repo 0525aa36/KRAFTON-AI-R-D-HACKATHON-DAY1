@@ -93,7 +93,7 @@ class TransformerBlock(nn.Module):
 class MultiplierTransformer(nn.Module):
     """Small GPT-style transformer for 6-bit binary multiplication."""
 
-    def __init__(self, d_model=64, n_heads=4, n_layers=4, d_ff=128):
+    def __init__(self, d_model=24, n_heads=4, n_layers=4, d_ff=48):
         super().__init__()
         self.d_model = d_model
         self.embedding = nn.Embedding(2, d_model)
@@ -121,7 +121,7 @@ class MultiplierTransformer(nn.Module):
 
 def build_model():
     """Returns an untrained model for Problem 1-2."""
-    return MultiplierTransformer(d_model=64, n_heads=4, n_layers=4, d_ff=128)
+    return MultiplierTransformer(d_model=24, n_heads=4, n_layers=4, d_ff=48)
 
 
 # ============================================================
